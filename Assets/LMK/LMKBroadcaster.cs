@@ -65,6 +65,7 @@ public class LMKBroadcaster: MonoBehaviour
             listener.OnLowMemory();
         }
 
+        Application.SimulateLowMemory();
         _lastBroadCastWasLow = true;
     }
 
@@ -178,7 +179,7 @@ public class LMKBroadcaster: MonoBehaviour
         _lowMemoryCheckWrapper.AppendDebugText("lowMemoryCheck", sb);
         _commitLimitWrapper.AppendDebugText("commitLimitCheck", sb);
         _availMemCheckWrapper.AppendDebugText("availMemCheck", sb);
-        Debug.Log(string.Format("{0}, {1}", nativeHeap, availMem));
+//        Debug.Log(string.Format("{0}, {1}", nativeHeap, availMem));
 #endif
 
         if (debugStatusText != null)
